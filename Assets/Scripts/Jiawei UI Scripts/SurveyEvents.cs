@@ -59,7 +59,7 @@ public class SurveyEvents : MonoBehaviour
             var submissionData = new List<object> { timestamp };
             submissionData.AddRange(responses.ConvertAll(r => (object)r));
 
-            var range = "'Form Responses 1'!A1:K1"; 
+            var range = "'Form Responses 1'!A1:K1";
 
             var valueRange = new ValueRange
             {

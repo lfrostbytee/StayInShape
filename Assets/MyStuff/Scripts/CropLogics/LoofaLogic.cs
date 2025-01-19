@@ -17,12 +17,12 @@ public class LoofaLogic : MonoBehaviour
     [SerializeField] private ParticleSystem waterParticles;
     [SerializeField] private AudioSource waterSound;
 
-    private float stage_1_threshold = 140f;
-    private float stage_2_threshold = 160f;
-    private float stage_3_threshold = 180f;
-    private float harvest_threshold = 200f;
-    private float wither_threshold = 180f;
-    private float warning_threshold = 140f;
+    private float stage_1_threshold = 0.643f * 86400f;
+    private float stage_2_threshold = 1.26f * 86400f;
+    private float stage_3_threshold = 1.9f * 86400f;
+    private float harvest_threshold = 2.5f * 86400f;
+    private float wither_threshold = 86400f;
+    private float warning_threshold = 0.8f * 86400f;
 
     private float growthAmount = 0f;
     private float growthRate = 1f;

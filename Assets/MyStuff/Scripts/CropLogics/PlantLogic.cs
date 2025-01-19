@@ -23,12 +23,12 @@ public class PlantLogic : MonoBehaviour
     [SerializeField] private ParticleSystem waterParticles;
     [SerializeField] private AudioSource waterSound;
 
-    private float stage_1_threshold = 120f;
-    private float stage_2_threshold = 140f;
-    private float stage_3_threshold = 160f;
-    private float harvest_threshold = 180f;
-    private float wither_threshold = 160f;
-    private float warning_threshold = 140f;
+    private float stage_1_threshold = 0.643f * 86400f;
+    private float stage_2_threshold = 2f * 86400f;
+    private float stage_3_threshold = 3f * 86400f;
+    private float harvest_threshold = 4f * 86400f;
+    private float wither_threshold = 4 * 3600f; //water every 4 hours
+    private float warning_threshold = 0.8f * 4f * 3600f;
 
     private float growthAmount = 0f;
     private float growthRate = 1f;

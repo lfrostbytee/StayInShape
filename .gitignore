@@ -75,4 +75,5 @@ Assets/TerrainSampleAssets/
 Assets/ADG_Textures/
 Assets/_ARMarker/Animations/Animation/
 
-**/lib_burst_generated.txt
+user.keystore
+*.zip

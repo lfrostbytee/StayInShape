@@ -1,15 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class TestManager : MonoBehaviour
 {
     public static TestManager instance;
     [SerializeField] private GameObject destinycubePrefab;
     [SerializeField] private TestEvents testEvents;
+    [SerializeField] private SurveyEvents surveyEvents;
     DefaultInputActions actions;
 
     private Renderer targetRenderer;
@@ -23,6 +23,7 @@ public class TestManager : MonoBehaviour
     public float timeToMemorise;
     private int[] coloursShown;
     private int cubesDestroyed = 0;
+    private string formUrl = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfV89LiHuzMxwitY1to1A9uSXEnHriAzssPY1Yi2aA0fsotFw/formResponse";
     private void Awake()
     {
         if (instance == null)
@@ -75,7 +76,7 @@ public class TestManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             // Calculate the position for each cube along the camera's forward direction
-            Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 5 + Camera.main.transform.right * (distanceBetweenCubes * (i + 1));
+            Vector3 spawnPosition = Camera.main.transform.position + Camera.main.transform.forward * 5 + Camera.main.transform.right * (distanceBetweenCubes * (i - 2));
 
             // Instantiate the cube at the calculated position
             spawnedCubes[i] = Instantiate(destinycubePrefab, spawnPosition, Quaternion.identity);
@@ -91,10 +92,10 @@ public class TestManager : MonoBehaviour
     public void Level3()
     {
         float distFromcamera = 5f;
-        float maxLeft = -3f;
-        float maxright = 3f;
-        float maxtop = 3f;
-        float maxbottom = -3f;
+        float maxLeft = -1.5f;
+        float maxright = 1.5f;
+        float maxtop = 1.5f;
+        float maxbottom = -1.5f;
 
         spawnedTargets = new GameObject[3];
         for (int i = 0; i < 3; i++)
@@ -248,6 +249,32 @@ public class TestManager : MonoBehaviour
         Debug.Log("Player managed to memorise in " + totalTimetaken + " seconds.");
         currLevel = 3;
         testEvents.NextLevel(currLevel);
+    }
+
+    public void SubmitResults(string data1, string data2, string data3)
+    {
+        StartCoroutine(Post(data1, data2, data3));
+    }
+    private IEnumerator Post(string data1, string data2, string data3)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("entry.1389526925", data1);
+        form.AddField("entry.2076729817", data2);
+        form.AddField("entry.142012223", data3);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(formUrl, form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("Results submitted successfully.");
+            }
+            else
+            {
+                Debug.LogError("Error in feedback submission: " + www.error);
+            }
+        }
     }
 
 }

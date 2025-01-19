@@ -17,16 +17,40 @@ MonoBehaviour:
   water: 100
   steps: 0
   exp: 10000
-  chillicrop: 10
+  chillicrop: 7
   loofacrop: 10
-  eggplantcrop: 10
+  eggplantcrop: 8
   sweetpotatocrop: 10
   papayacrop: 10
   kalamansicrop: 10
   lastHeldItem: -1
-  plants: []
+  plants:
+  - plantedTime: 11/16/2024 22:59:59
+    position: {x: 0.30976453, y: 0.49999964, z: 0.27901575}
+    growthAmount: 87.37152
+    growthRate: 1
+    witherTime: 87.37152
+    plantType: 1
+  - plantedTime: 11/16/2024 22:59:59
+    position: {x: 0.058455583, y: 0.49999964, z: -0.054672662}
+    growthAmount: 76.954506
+    growthRate: 1
+    witherTime: 76.954506
+    plantType: 3
+  - plantedTime: 11/16/2024 22:59:59
+    position: {x: -0.26616308, y: 0.49999964, z: 0.20380107}
+    growthAmount: 40.820248
+    growthRate: 1
+    witherTime: 40.820248
+    plantType: 1
+  - plantedTime: 11/16/2024 22:59:59
+    position: {x: -0.31893098, y: 0.50000066, z: -0.24865262}
+    growthAmount: 13.543826
+    growthRate: 1
+    witherTime: 13.543826
+    plantType: 1
   decorations: []
-  snapTimer: 10/14/2024 18:03
-  matchingCardTimer: 10/14/2024 18:03
-  chickenInvaderTimer: 10/14/2024 18:03
+  snapTimer: 11/13/2024 00:34
+  matchingCardTimer: 11/13/2024 00:34
+  chickenInvaderTimer: 11/13/2024 00:34
   hasCollectedRewardStatus: 000000000000000000000000000000
