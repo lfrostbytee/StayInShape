@@ -951,6 +951,9 @@ MonoBehaviour:
   destinycubePrefab: {fileID: 1871189687427557410, guid: 625498bc4475f1749b0563ed1c550b5d,
     type: 3}
   testEvents: {fileID: 702124602}
+  surveyEvents: {fileID: 0}
+  distanceBetweenCubes: 2
+  timeToMemorise: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -17,12 +17,12 @@ public class CalamansiLogic : MonoBehaviour
     [SerializeField] private ParticleSystem waterParticles;
     [SerializeField] private AudioSource waterSound;
 
-    private float stage_1_threshold = 220f;
-    private float stage_2_threshold = 230f;
-    private float stage_3_threshold = 250f;
-    private float harvest_threshold = 270f;
-    private float wither_threshold = 250f;
-    private float warning_threshold = 230f;
+    private float stage_1_threshold = 0.643f * 86400f;
+    private float stage_2_threshold = 3f * 86400f;
+    private float stage_3_threshold = 5f * 86400f;
+    private float harvest_threshold = 7f * 86400f;
+    private float wither_threshold = 8f * 3600f;
+    private float warning_threshold = 0.8f * (8f * 3600f);
 
     private float growthAmount = 0f;
     private float growthRate = 1f;

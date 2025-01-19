@@ -17,12 +17,12 @@ public class SweetpotatoLogic : MonoBehaviour
     [SerializeField] private ParticleSystem waterParticles;
     [SerializeField] private AudioSource waterSound;
 
-    private float stage_1_threshold = 180f;
-    private float stage_2_threshold = 200f;
-    private float stage_3_threshold = 220f;
-    private float harvest_threshold = 240f;
-    private float wither_threshold = 220f;
-    private float warning_threshold = 200f;
+    private float stage_1_threshold = 0.357f * 86400f;
+    private float stage_2_threshold = 2f * 86400f;
+    private float stage_3_threshold = 4f * 86400f;
+    private float harvest_threshold = 6f * 86400f;
+    private float wither_threshold = 86400f;
+    private float warning_threshold = 0.8f * 86400f;
 
     private float growthAmount = 0f;
     private float growthRate = 1f;

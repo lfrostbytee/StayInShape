@@ -98,6 +98,7 @@ public class TestEvents : MonoBehaviour
         shootButton.style.display = DisplayStyle.None;
         introduction.text = "\n\nThis is the end of the test, \nthese are your results: \n" + result1 + ", \n" + result2 + ", \n" + result3;
         introduction.style.display = DisplayStyle.Flex;
+        TestManager.instance.SubmitResults(result1.ToString(), result2.ToString(), result3.ToString());
     }
     public void NextLevel(int nextLevel)
     {
